@@ -887,8 +887,15 @@ function renderValidation(validation: PanelValidation): string {
     return `<span class="validation validation-passed">✓ Syntax checked successfully${validation.tool ? ` (${escapeHtml(validation.tool)})` : ''}.</span> <span class="validation-note">${runtimeNote}</span>`;
   }
 
-  if (validation.status === 'failed') {
-    return `<span class="validation validation-failed">⚠ Syntax validation failed${validation.tool ? ` (${escapeHtml(validation.tool)})` : ''}. Review the corrected code before using it.</span>${validation.detail ? `<pre class="validation-detail">${escapeHtml(validation.detail)}</pre>` : ''} <span class="validation-note">${runtimeNote}</span>`;
+      if (validation.status === 'failed') {
+    const detail = typeof validation.detail === 'string' ? validation.detail : '';
+    const isPythonNotFound = detail.toLowerCase().includes('microsoft store') ||
+      detail.toLowerCase().includes('python was not found') ||
+      (validation.tool === 'Python ast.parse' && detail.toLowerCase().includes('not found'));
+    if (isPythonNotFound) {
+      return `<span class="validation">Syntax validation unavailable for this file.</span> <span class="validation-note">${runtimeNote}</span>`;
+    }
+    return `<span class="validation validation-failed">⚠ Syntax validation failed${validation.tool ? ` (${escapeHtml(validation.tool)})` : ''}. Review the corrected code before using it.</span>${detail ? `<pre class="validation-detail">${escapeHtml(detail)}</pre>` : ''} <span class="validation-note">${runtimeNote}</span>`;
   }
 
   return `<span class="validation">Syntax validation unavailable for this file.</span> <span class="validation-note">${runtimeNote}</span>`;

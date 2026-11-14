@@ -377,8 +377,8 @@ EXPLANATION REQUIREMENTS
 ========================
 
 For each issue, write:
-- "Error type:" a short, understandable name for the actual problem in
-  ${targetLanguage}, for example Syntax Error, Undefined Variable,
+- "Error type:" a short, understandable name for the actual problem,
+  ALWAYS in English regardless of ${targetLanguage}, for example Syntax Error, Undefined Variable,
   Division by Zero, Missing Parenthesis, Type Error, Null Pointer
   Dereference, Index Out of Range, Invalid Operation. Use the term that
   is correct for ${language}. Do not write a severity.
@@ -387,9 +387,17 @@ For each issue, write:
 - Then ONE beginner-friendly paragraph of about 3 to 5 short sentences in
   ${targetLanguage} that covers what happened, why it happened, why
   ${language} behaves that way, and how to avoid the mistake. Connect it
-  to the actual code and line. A short everyday analogy is welcome when it
-  genuinely helps (for example: dividing a pizza among zero people has no
-  meaningful answer). No headings, no bullet lists, no sub-sections.
+  to the actual code and line. You MUST include a short everyday analogy or real-world example that
+  makes the concept concrete for a beginner. Use analogies like:
+  - For missing semicolon: "Just like how every English sentence ends with
+    a full stop to show it is complete, every statement in this language
+    must end with a semicolon so the compiler knows the statement is done."
+  - For division by zero: "Imagine you have a cake and you want to divide
+    it among 0 people — that is mathematically impossible, and the
+    computer signals this the same way."
+  - For null pointer: "It is like trying to open a door using a key that
+    does not exist — you have the variable name but nothing is behind it."
+  Adapt the analogy to the specific error. No headings, no bullet lists, no sub-sections.
   Never merely repeat the compiler message.
 
 If several listed diagnostics come from the same underlying mistake, say
@@ -426,8 +434,11 @@ LANGUAGE REQUIREMENTS
 ========================
 
 The student's selected explanation language is ${targetLanguage}.
-- Write ALL explanatory text (error types, summaries, explanations, What
+- Write ALL explanatory text (summaries, explanations, What
   was fixed, Remember) in ${targetLanguage}.
+- Keep "Error type:" values ALWAYS in English. Never translate error type
+  names like "Syntax Error", "ZeroDivisionError", "Null Pointer Dereference",
+  "Index Out of Range", "NameError", "IndentationError" into ${targetLanguage}.
 - Keep the section labels below exactly in English.
 - Keep source code, identifiers, keywords, function names, and compiler
   messages unchanged. Never translate code.
