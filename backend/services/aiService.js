@@ -419,8 +419,12 @@ function parseBatchExplanationResponse(
           continue;
         }
 
+        const markerSequence = markers
+          .slice(Math.max(0, i - 4), i + 1)
+          .map(m => ({ kind: m.kind, id: m.id || null, index: m.index ?? null }));
         throw new Error(
-          "Individual correction must immediately follow its explanation."
+          "Individual correction must immediately follow its explanation. " +
+          `Recent markers: ${JSON.stringify(markerSequence)}`
         );
       }
 

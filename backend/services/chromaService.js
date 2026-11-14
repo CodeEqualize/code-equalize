@@ -9,7 +9,8 @@ const {
 
 const client = new ChromaClient({
   host: CHROMA_HOST,
-  port: Number(CHROMA_PORT)
+  port: Number(CHROMA_PORT),
+  ssl: false
 });
 
 const COLLECTION_NAME = "code_errors";

@@ -72,13 +72,25 @@ async function checkPython(code) {
   for (const command of ["python3", "python"]) {
     const result = await runTool(command, ["-I", "-c", PYTHON_CHECK], code);
 
-    if (result.available) {
-      return result;
+    if (!result.available) {
+      continue;
     }
+
+    // Windows may resolve python3 to a Microsoft Store alias.
+    // That alias exists but does not provide a working interpreter.
+    if (
+      !result.ok &&
+      /Python was not found|install from the Microsoft Store/i.test(result.output)
+    ) {
+      continue;
+    }
+
+    return result;
   }
 
   return { available: false };
 }
+
 
 async function checkC(code, language) {
   const compiler = language === "C" ? "gcc" : "g++";

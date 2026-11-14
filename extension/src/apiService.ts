@@ -1,5 +1,5 @@
-const BACKEND_URL = 'http://127.0.0.1:3000/explain';
-const BACKEND_BATCH_URL = 'http://127.0.0.1:3000/explain/all';
+const BACKEND_URL = 'https://code-equalize-production.up.railway.app/explain';
+const BACKEND_BATCH_URL = 'https://code-equalize-production.up.railway.app/explain/all';
 
 const REQUEST_TIMEOUT = 20000;
 // Longer than the backend's Groq timeout so the backend can always answer
