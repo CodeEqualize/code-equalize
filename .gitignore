@@ -18,3 +18,10 @@ Thumbs.db
 # VS Code test files
 .vscode-test/
 chroma/
+
+# Root dependencies
+/node_modules/
+
+# Local ChromaDB databases
+/backend/chroma/
+/backend/chroma_data/
