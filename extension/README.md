@@ -1,7 +1,7 @@
 # Code Equalize
 
 <p align="left">
-  <img src="media/code-equalize-logo.png" alt="Code Equalize" width="120">
+  <img src="https://github.com/CodeEqualize/code-equalize/raw/refs/heads/main/extension/media/code-equalize-logo.png" alt="Code Equalize" width="120">
 </p>
 
 **Understand coding errors in your preferred language.**
