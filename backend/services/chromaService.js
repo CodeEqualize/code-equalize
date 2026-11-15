@@ -37,13 +37,22 @@ async function getCollection() {
     return collection;
   }
 
-  collection = await client.getOrCreateCollection({
-    name: COLLECTION_NAME,
-    metadata: {
-      description: "Programming Error Knowledge Base"
-    },
-    embeddingFunction
-  });
+  try {
+    collection = await client.getOrCreateCollection({
+      name: COLLECTION_NAME,
+      metadata: {
+        description: "Programming Error Knowledge Base"
+      },
+      embeddingFunction
+    });
+  } catch (err) {
+    console.error(
+      `[ChromaDB] getCollection failed: ${err.name || "Error"}: ${err.message || "(no message)"}` +
+      `${err.cause ? ` | cause: ${err.cause}` : ""}` +
+      `${err.code ? ` | code: ${err.code}` : ""}`
+    );
+    throw err;
+  }
 
   return collection;
 }

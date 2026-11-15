@@ -260,15 +260,11 @@ function parseBatchExplanationResponse(
 
   const text = cleanOuterMarkdown(rawText);
 
-  const escapedIds = expectedErrors
-    .map(item => item.id)
-    .sort((left, right) => right.length - left.length)
-    .map(escapeRegExp);
-  const idPattern = escapedIds.length ? escapedIds.join("|") : "(?!)";
+  const validIdSet = new Set(expectedErrors.map(item => item.id));
 
   const markerPattern = new RegExp(
     "(?:^|\\n)[ \\t]*(?:#{1,4}[ \\t]*)?(?:\\*\\*|__)?(" +
-      `Explanation\\s+(\\d+)\\s*\\[id=(${idPattern})\\]` +
+      "Explanation\\s+(\\d+)\\s*\\[id=([^\\n]+?)\\]" +
       "|Additional issue\\s+(\\d+)\\s*\\[line=([^\\]\\n]*)\\]" +
       "|Individual correction|Correction status|Fix|What was fixed|Remember" +
     ")\\s*:(?:\\*\\*|__)?[ \\t]*",
@@ -296,10 +292,17 @@ function parseBatchExplanationResponse(
       kind = label;
     }
 
+    const rawId = match[3] ? match[3].trim() : undefined;
+    // For explanation markers, only accept IDs we actually expect.
+    // This prevents false matches on unrelated lines containing [id=...].
+    if (kind === "explanation" && rawId !== undefined && !validIdSet.has(rawId)) {
+      continue;
+    }
+
     markers.push({
       kind,
       index: match[2] ? Number(match[2]) : undefined,
-      id: match[3] ? match[3].trim() : undefined,
+      id: rawId,
       lineLabel: match[5] !== undefined ? match[5].trim() : undefined,
       start: match.index,
       contentStart: markerPattern.lastIndex
