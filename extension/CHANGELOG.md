@@ -1,7 +1,11 @@
-
 # Change Log
 
 All notable changes to the Code Equalize extension will be documented in this file.
+
+## [0.0.2] - 2026-11-15
+
+### Fixed
+- Fixed the logo image URL in the Marketplace README.
 
 ## [0.0.1] - 2026-11-15
 

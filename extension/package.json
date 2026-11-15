@@ -2,7 +2,7 @@
   "name": "code-equalize",
   "displayName": "Code Equalize",
   "description": "Explains code errors and suggests fixes in your native language",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "code-equalize",
   "license": "MIT",
   "repository": {
