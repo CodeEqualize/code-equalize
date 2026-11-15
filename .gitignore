@@ -25,3 +25,6 @@ chroma/
 # Local ChromaDB databases
 /backend/chroma/
 /backend/chroma_data/
+
+# Generated VS Code extension packages
+*.vsix

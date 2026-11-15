@@ -1,71 +1,90 @@
-# code-equalize README
+# Code Equalize
 
-This is the README for your extension "code-equalize". After writing up a brief description, we recommend including the following sections.
+<p align="left">
+  <img src="media/code-equalize-logo.png" alt="Code Equalize" width="120">
+</p>
+
+**Understand coding errors in your preferred language.**
+
+Code Equalize is an AI-powered Visual Studio Code extension that helps developers understand programming errors through simplified, context-aware explanations in their preferred language. It aims to make debugging more accessible, educational, and beginner-friendly.
+
+## Problem
+
+Programming errors can be difficult to understand, especially for beginners. Compiler and runtime messages are often technical and presented primarily in English, creating a learning barrier for students and aspiring developers.
+
+## Solution
+
+Code Equalize uses AI to analyse programming errors, retrieve relevant contextual knowledge, and provide simplified explanations while preserving technical accuracy.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **AI-assisted debugging:** Analyse programming errors and generate explanations.
+- **Multilingual explanations:** Understand errors in your preferred language.
+- **Context-aware suggestions:** Receive relevant explanations based on the available code context.
+- **Retrieval-Augmented Generation (RAG):** Retrieve relevant knowledge to improve response quality.
+- **ChromaDB integration:** Store and retrieve contextual programming knowledge.
+- **Beginner-friendly guidance:** Make complex programming errors easier to understand.
 
-For example if there is an image subfolder under your extension project workspace:
+## Supported Programming Languages
 
-\!\[feature X\]\(images/feature-x.png\)
+- Python
+- Java
+- C
+- C++
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Technology Stack
 
-## Requirements
+| Component | Technology |
+|---|---|
+| Extension | TypeScript |
+| Editor integration | VS Code Extension API |
+| Backend | Node.js, Express.js |
+| AI inference | Groq API |
+| AI model | `openai/gpt-oss-120b` |
+| Vector database | ChromaDB |
+| Hosting | Railway |
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Installation
 
-## Extension Settings
+1. Open Visual Studio Code.
+2. Navigate to the Extensions view (`Ctrl + Shift + X`).
+3. Search for **Code Equalize**.
+4. Select the extension and click **Install**.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Usage
 
-For example:
+1. Open a supported programming file in VS Code.
+2. Select the relevant code or error context.
+3. Right-click and choose **Explain with Code Equalize**, where available.
+4. Alternatively, open the Command Palette using `Ctrl + Shift + P`.
+5. Search for **Code Equalize: Explain in My Language**.
+6. Follow the extension's prompts to receive an explanation.
 
-This extension contributes the following settings:
+An active internet connection is required to communicate with the hosted backend.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Backend
 
-## Known Issues
+Code Equalize uses a hosted backend deployed on Railway.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+The backend integrates AI-powered explanation generation with ChromaDB-based knowledge retrieval.
+
+## Repository
+
+[GitHub – Code Equalize](https://github.com/CodeEqualize/code-equalize)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Project Status
+
+Code Equalize is developed as an academic major project with the goal of improving programming accessibility and helping developers understand, learn from, and resolve coding errors more effectively.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- Initial release of Code Equalize.
+- AI-powered programming error explanations.
+- Multilingual explanation support.
+- Context-aware knowledge retrieval.

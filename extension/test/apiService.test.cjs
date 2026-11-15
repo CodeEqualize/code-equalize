@@ -44,7 +44,7 @@ test('batch API sends source and explanation languages as separate fields', asyn
 
   try {
     const result = await sendExplainAll(request);
-    assert.equal(captured.url, 'http://127.0.0.1:3000/explain/all');
+    assert.equal(captured.url, 'https://code-equalize-production.up.railway.app/explain/all');
     assert.equal(captured.body.language, 'Python');
     assert.equal(captured.body.targetLanguage, 'Hindi');
     assert.equal(result.explanations[0].explanation, 'Hindi explanation');
