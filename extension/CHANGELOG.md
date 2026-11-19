@@ -2,6 +2,12 @@
 
 All notable changes to the Code Equalize extension will be documented in this file.
 
+## [0.0.4] - 2026-11-19
+
+### Fixed
+- Fixed README image links using publicly accessible GitHub Raw URLs.
+- Improved logo and screenshot rendering compatibility with the Visual Studio Marketplace.
+
 ## [0.0.3] - 2026-11-16
 
 ### Improved

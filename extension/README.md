@@ -1,7 +1,7 @@
 # Code Equalize
 
 <p align="left">
-  <img src="media/code-equalize-logo.png" alt="Code Equalize" width="120">
+  <img src="https://raw.githubusercontent.com/CodeEqualize/code-equalize/main/extension/media/code-equalize-logo.png" alt="Code Equalize" width="120">
 </p>
 
 **Understand coding errors in your preferred language.**
@@ -16,19 +16,19 @@ Code Equalize is an AI-powered Visual Studio Code extension that helps developer
 
 ### Extension Interface
 
-![Code Equalize Extension Interface](media/screenshots/error-detection-and-explanation.png)
+![Code Equalize Extension Interface](https://raw.githubusercontent.com/CodeEqualize/code-equalize/main/extension/media/screenshots/error-detection-and-explanation.png)
 
 ### Error Explanation and Corrected Code Suggestions
 
-![Code Equalize Corrected Code Suggestions](media/screenshots/corrected-code-suggestions.png)
+![Code Equalize Corrected Code Suggestions](https://raw.githubusercontent.com/CodeEqualize/code-equalize/main/extension/media/screenshots/corrected-code-suggestions.png)
 
 ### Language Selection
 
-![Code Equalize Language Selection](media/screenshots/language-selection.png)
+![Code Equalize Language Selection](https://raw.githubusercontent.com/CodeEqualize/code-equalize/main/extension/media/screenshots/language-selection.png)
 
 ### VS Code Marketplace
 
-![Code Equalize Marketplace Listing](media/screenshots/marketplace-listing.png)
+![Code Equalize Marketplace Listing](https://raw.githubusercontent.com/CodeEqualize/code-equalize/main/extension/media/screenshots/marketplace-listing.png)
 
 
 ---
